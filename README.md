@@ -1,4 +1,4 @@
-# I'm Walkin' Here with Pets
+# I'm Walkin' Here - Remove Friendly Collisions
 
 ## Settings
 Setting | Description
