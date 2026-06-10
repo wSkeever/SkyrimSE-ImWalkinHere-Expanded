@@ -1,5 +1,11 @@
 # I'm Walkin' Here - Remove Friendly Collisions
 
+Forked from:
+- https://github.com/golovatris/SkyrimSE-ImWalkinHereWithPets
+- https://github.com/VersuchDrei/ImWalkinHere
+- https://github.com/clayne/ImWalkinHere
+- https://github.com/derickso/ImWalkinHere
+
 ## Settings
 Setting | Description
 --- | ---
