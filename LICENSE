@@ -677,7 +677,8 @@ Public License instead of this License.  But first, please read
 ORIGINAL UPSTREAM COMPONENT AND MIT LICENSE
 ========================================================================
 This project incorporates code from the following upstream repositories:
-* 
+* https://github.com/clayne/ImWalkinHere
+* https://github.com/derickso/ImWalkinHere
 * https://github.com/VersuchDrei/ImWalkinHere/
 * https://github.com/golovatris/SkyrimSE-ImWalkinHereWithPets
 
