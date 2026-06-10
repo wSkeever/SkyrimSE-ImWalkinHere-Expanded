@@ -4,3 +4,4 @@ disableAllySummonCollision = true
 disableDialogueCollision = true
 disableSummonCollision = true
 disablePetCollision = true
+disableFriendlyCollision = true

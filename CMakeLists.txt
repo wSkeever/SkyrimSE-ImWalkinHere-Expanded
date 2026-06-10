@@ -45,6 +45,15 @@ find_path(ARTICUNO_INCLUDE_DIRS "articuno/articuno.h")
 add_commonlibsse_plugin(${PROJECT_NAME} SOURCES ${headers} ${sources})
 add_library("${PROJECT_NAME}::${PROJECT_NAME}" ALIAS "${PROJECT_NAME}")
 
+if(MSVC)
+    target_compile_options(${PROJECT_NAME} PRIVATE /Zi)
+    target_link_options(${PROJECT_NAME} PRIVATE /DEBUG /OPT:REF /OPT:ICF)
+    set_target_properties(${PROJECT_NAME} PROPERTIES
+        COMPILE_PDB_NAME ${PROJECT_NAME}
+        COMPILE_PDB_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}
+    )
+endif()
+
 target_include_directories(${PROJECT_NAME}
         PRIVATE
         $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/src>
@@ -69,3 +78,7 @@ install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/include/Sample"
 
 install(TARGETS ${PROJECT_NAME}
         DESTINATION "${CMAKE_INSTALL_LIBDIR}")
+
+install(FILES $<TARGET_PDB_FILE:${PROJECT_NAME}>
+        DESTINATION "${CMAKE_INSTALL_LIBDIR}"
+        OPTIONAL)

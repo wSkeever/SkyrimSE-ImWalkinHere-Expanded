@@ -133,6 +133,21 @@ private:
     RE::TESFaction* _petsFaction;
 };
 
+class FriendlyCollider : public ICollider {
+protected:
+    bool ShouldIgnoreCollision(RE::TESObjectREFR* a_colRef) override {
+        if (!a_colRef || a_colRef->IsNot(RE::FormType::ActorCharacter)) {
+            return false;
+        }
+        const auto player = RE::PlayerCharacter::GetSingleton();
+        if (!player) {
+            return false;
+        }
+        const auto colActor = static_cast<RE::Actor*>(a_colRef);
+        return !colActor->IsHostileToActor(player);
+    }
+};
+
 class CollisionHandler {
 public:
     [[nodiscard]] static auto GetSingleton() -> util::not_null<CollisionHandler*> {
@@ -190,6 +205,11 @@ private:
         if (*Settings::disablePetCollision) {
             _colliders.push_back(std::make_unique<PetCollider>());
             logger::info("disablePetCollision");
+        }
+
+        if (*Settings::disableFriendlyCollision) {
+            _colliders.push_back(std::make_unique<FriendlyCollider>());
+            logger::info("disableFriendlyCollision");
         }
 
         return !_colliders.empty();

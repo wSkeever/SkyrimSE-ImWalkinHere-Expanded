@@ -8,3 +8,4 @@ Setting | Description
 `disableSummonCollision` | Disables collision between the player and their summons.
 `disableAllySummonCollision` | Disables collision between the player and their allies' summons.
 `disablePetCollision` | Disables collision between the player and their pets (from CC Pets).
+`disableFriendlyCollision` | Disables collision between the player and friendly NPCs.

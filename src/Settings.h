@@ -27,4 +27,5 @@ struct Settings {
     static inline bSetting disableDialogueCollision{"General"s, "disableDialogueCollision"s, true};
     static inline bSetting disableSummonCollision{"General"s, "disableSummonCollision"s, true};
     static inline bSetting disablePetCollision{"General"s, "disablePetCollision"s, true};
+    static inline bSetting disableFriendlyCollision{"General"s, "disableFriendlyCollision"s, true};
 };
