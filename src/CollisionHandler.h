@@ -182,6 +182,12 @@ private:
     }
 
     bool Init() {
+        if (*Settings::disableFriendlyCollision) {
+            _colliders.push_back(std::make_unique<FriendlyCollider>());
+            logger::info("disableFriendlyCollision");
+            return !_colliders.empty();
+        }
+
         if (*Settings::disableAllyCollision) {
             _colliders.push_back(std::make_unique<AllyCollider>());
             logger::info("disableAllyCollision");
@@ -205,11 +211,6 @@ private:
         if (*Settings::disablePetCollision) {
             _colliders.push_back(std::make_unique<PetCollider>());
             logger::info("disablePetCollision");
-        }
-
-        if (*Settings::disableFriendlyCollision) {
-            _colliders.push_back(std::make_unique<FriendlyCollider>());
-            logger::info("disableFriendlyCollision");
         }
 
         return !_colliders.empty();
