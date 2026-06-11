@@ -1,7 +1,6 @@
-# I'm Walkin' Here - Remove Friendly Collisions
+# I'm Walkin' Here NG Expanded - Remove Friendly Collisions
 
 Forked from:
-- https://github.com/golovatris/SkyrimSE-ImWalkinHereWithPets
 - https://github.com/VersuchDrei/ImWalkinHere
 - https://github.com/clayne/ImWalkinHere
 - https://github.com/derickso/ImWalkinHere
